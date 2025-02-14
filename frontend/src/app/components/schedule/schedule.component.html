@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Расписание</h2>
+
+  <div class="prompt-box">
+    <form [formGroup]="promtForm" class="promt-textarea">
+      <tui-textarea
+        formControlName="promtFormName"
+        [expandable]="true"
+        [maxLength]="maxLength"
+      >
+        Введите своё расписание
+      </tui-textarea>
+      <tui-error
+        formControlName="promtFormName"
+        [error]="[] | tuiFieldError | async"
+      />
+    </form>
+    <button
+      class="send-button"
+      type="button"
+      appearance="outline"
+      tuiAppearanceMode="checked"
+      tuiButton
+      [iconStart]="'@tui.send-horizontal'"
+      [disabled]="isLoading"
+      (click)="generateSchedule()"
+    >
+      Отправить
+    </button>
+  </div>
+
+  <daypilot-calendar [config]="config" [events]="events" />
+</div>

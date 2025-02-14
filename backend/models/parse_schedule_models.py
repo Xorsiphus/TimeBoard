@@ -6,7 +6,7 @@ class PromptRequest(BaseModel):
 
 
 class ScheduleItem(BaseModel):
-    title: str
-    description: str
-    start_time: str
-    end_time: str
+    id: str
+    text: str
+    start: str
+    end: str
