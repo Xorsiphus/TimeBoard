@@ -1,4 +1,4 @@
-# import uvicorn
+import uvicorn
 from fastapi import FastAPI
 from typing import List
 from fastapi.middleware.cors import CORSMiddleware
@@ -20,5 +20,5 @@ app.add_middleware(
 async def parse_schedule(request: PromptRequest):
     return parse_schedule_handler(request)
 
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="0.0.0.0", port=8000)
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
